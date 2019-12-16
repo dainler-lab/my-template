@@ -6,9 +6,7 @@ const uglify = require('gulp-uglify');
 const autoprefixer = require('gulp-autoprefixer');
 const browserSync = require('browser-sync').create();
 const babel = require('gulp-babel');
-//const rsync = require('gulp-rsync');
 const fileinclude = require('gulp-file-include');
-//const plumber = require('gulp-plumber');
 
 /* Functions+Gulp */
 
@@ -45,20 +43,6 @@ function compileSASS () {
 		.pipe(browserSync.stream());
 }
 gulp.task('compileSASS', compileSASS);
-
-
-/* Function
-+ sass: compilar o SASS em CSS e comprimir 
-+ autoprefixer: criar css para browsers antigos
-+ browserSync: injetar css na página no DEV
-+ gulp.task: criar tarefa gulp para function compileSASS */
-
-function findluginsCSS () {
-	return gulp
-		.src('node_modules/')		
-		.pipe(gulp.dest('scss/css/'))
-}
-gulp.task('findluginsCSS', findluginsCSS);
 
 /* Function
 + concat: agrupar todo js em main.mim.js
@@ -110,7 +94,7 @@ ex -> @@include('./includes/header.html')
 function compileHTML (done) {
 	gulp.src([
 		'./src/**/index.html',
-		'./src/**/database.html'
+		'./src/**/about.html'
 	])
 		.pipe(fileinclude({
 			prefix: '@@',
@@ -151,29 +135,3 @@ gulp.task('default',
 		'compileHTML'
 	)
 );
-
-
-/* // Deploy
-gulp.task('deploy', function() {
-	gulp.src('./')
-	.pipe(rsync({
-		exclude: [
-			'.git*',
-			'node_modules',
-			'.sass-cache',
-			'gulpfile.js',
-			'package.json',
-			'.DS_Store',
-			'README.md',
-			'.jshintrc',
-			'*.sublime-workspace',
-			'*.sublime-project'
-		],
-		root: './',
-		hostname: 'user@host',
-		destination: 'dest/',
-		recursive: true,
-		clean: true,
-		progress: true
-	}));
-}); */
