@@ -12,4 +12,4 @@ Start projeto pessoal pra meios acadêmicos.
 
 ## License
 
-The my-template é um software de código aberto licenciado sob o [MIT license](https://opensource.org/licenses/MIT) a fins de estudos e testes.
+O my-template é um início de código aberto a fins de estudos e testes.
