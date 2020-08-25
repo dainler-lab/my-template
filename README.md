@@ -2,13 +2,7 @@
 
 ## About My-Template
 
-Start projeto pessoal pra meios acadêmicos.
-
-- [LINK](https://google.com)
-
-## Testers
-
-- **[LINK](https://google.com/)**
+Start front-end para projetos.
 
 ## License
 
